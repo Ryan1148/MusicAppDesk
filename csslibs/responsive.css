@@ -1,0 +1,89 @@
+@media (max-width:800px) {
+    .content .artistarea {
+        flex-direction: column;
+    }
+    .content .top{
+        align-items: flex-start;
+    }
+    .content .artcanvas{
+        width: 44vw;
+        height: 160px;    
+    }
+    .content .info .title{
+        font-size: 1.3em;
+    }
+    .content .info .desc{
+        font-size: 1.1em;
+    }
+    .musicArea .musicNavbar{
+        height: 60px;
+    }
+    .info .CurrentPlay{
+        font-size: 1.8vw;
+    }
+    .info .title{
+        font-size: 1.8vw;
+    }
+    .top .likeBtn{
+        display: none;
+    }
+    .top .likeBtn,.like2ndBtn{
+        transform: scale(1);
+        opacity: 1;
+        width: 40px;
+    }
+    .infoData{
+        width: 100%;
+    }
+    .musicContainer{
+        height: calc(100% - 60px);
+    }
+    .leftbar{
+        padding: 0px 15px 0 0px;
+    }
+    .card-wrapper .card{
+        width: 35vw;
+        height: 35vw;
+    }
+    .card .cardTag{
+        font-size: 2vw;
+    }
+}
+
+@media (max-width:600px) {
+    .controls .play{
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+    }
+    .play img{
+        width: 20px;
+    }
+    .controls .prev{
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+    }
+    .prev img{
+        width: 18px;
+    }
+    .controls .next{
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+    }
+    .next img{
+        width: 18px;
+    }
+    .controller .control{
+        background-color:transparent ;
+    }
+}
+@media (max-width:500px) {
+    .info .CurrentPlay{
+        font-size: 2.4vw;
+    }
+    .info .title{
+        font-size: 2.4vw;
+    }
+}

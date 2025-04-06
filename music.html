@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="csslibs/design.css">
+    <link rel="stylesheet" href="csslibs/responsive.css">
+    <title>music</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container smoother">
+            <div class="leftbar">
+                <div class="content">
+                    <div class="top">
+                        <div class="artistarea">
+                            <div class="artcanvas">
+                                <div class="moreInfo">
+                                    <img src="icons/artist-info.svg" title="About the Artist">
+                                </div>
+                                <img src="" class="fitter artistcard">
+                            </div>
+                            <div class="infoData">
+                                <div class="info">
+                                    <h4 class="title"></h4>
+                                    <p class="desc"></p>
+                                </div>
+                                <span class="like2ndBtn"><img src="icons/unfilled-heart.svg"></span>
+                            </div>
+                        </div>
+                        <span class="likeBtn"><img src="icons/unfilled-heart.svg"></span>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="controller">
+                        <span class="repeater repeat control enable"><img src="icons/repeat.svg" class="ci cb"></span>
+                        <div class="controls">
+                            <div class="icon prev"><img src="icons/previous.svg" class="size"></div>
+                            <div class="icon play"><img src="icons/play.svg" class="size"></div>
+                            <div class="icon next"><img src="icons/next.svg" class="size"></div>
+                        </div>
+                        <span class="queueMusic control"><img src="icons/queue-music.svg" class="ci"></span>
+                    </div>
+                    <div class="prog-area">
+                        <audio src="" class="mainAudio"></audio>
+                        <div class="progress-area smoother">
+                            <div class="progbar"></div>
+                        </div>
+                        <div class="timebar">
+                            <span class="current">0:00</span>
+                            <span class="duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightbar">
+                <div class="canvas"><img src="" class="fitter"></div>
+                <div class="musicArea cardhide">
+                    <div class="musicNavbar">
+                        <div class="info">
+                            <p class="CurrentPlay">Currently Playing</p>
+                            <p class="title"></p>
+                        </div>
+                    </div>
+                    <div class="musicContainer">
+                        <div class="card-wrapper"></div>
+                    </div>
+                </div>
+                <div class="artist-card card-hide">
+                    <div class="artist-wrapper">
+                        <div class="artist-content">
+                            <div class="canvas"><img src="" class="fitter"></div>
+                            <div class="artistBtns">
+                                <span class="artBtn artCancel"><img src="icons/back.svg"></span>
+                                <span class="artBtn"><img src="icons/check.svg"></span>
+                                <span class="artBtn"><img src="icons/heart.svg"></span>
+                            </div>
+                        </div>
+                        <div class="artInfo">
+                            <h4 class="title"></h4>
+                            <button class="flw">Follow</button>
+                        </div>
+                        <div class="about-wrapper">
+                            <p class="about"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="logic.js"></script>
+</body>
+
+</html>

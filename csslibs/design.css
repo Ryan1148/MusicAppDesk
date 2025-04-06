@@ -1,0 +1,617 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease;
+}
+.fitter {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+.smoother{
+    transition: 0.4s ease;
+}
+
+.container {
+    width: 800px;
+    height: 500px;
+    background: #111;
+    border-radius: 20px;
+    padding: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leftbar {
+    padding: 15px 15px 0 15px;
+    border-radius: 11px;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.leftbar .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+.top .likeBtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e2e2e;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.like2ndBtn{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e2e2e;
+    cursor: pointer;
+    transition: 0.4s ease;
+    transform: scale(0);
+    width: 0;
+}
+.likeBtn img{
+    width: 20px;
+}
+.like2ndBtn img{
+    width: 20px;
+}
+.likeBtn:active{
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+.infoData{
+    display: flex;
+    justify-content: space-between;
+}
+.content .artistarea{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+.content .artistdesc{
+    background: #1e1e1e;
+    border-radius: 11px;
+    padding: 10px;
+}
+.artistdesc p{
+    color: #808080;
+    user-select: none;
+}
+
+.leftbar .prog-area {
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.prog-area .timebar {
+    color: #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prog-area .progress-area {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #000;
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progress-area .progbar {
+    position: relative;
+    height: 100%;
+    border-radius: inherit;
+    width: 0;
+    transition: 0.4s ease;
+}
+
+.progbar::before {
+    content: "";
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #000;
+    transform: translateY(-50%) scale(0.5);
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.2s ease-out;
+}
+
+.progress-area:hover .progbar::before {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+.controls .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e2e2e;
+}
+
+.controls .prev {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.controls .play {
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.controls .next {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.play:active {
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+
+.next:active {
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+
+.prev:active {
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+
+.prev img {
+    width: 25px;
+    filter: brightness(0.7)
+}
+
+.play img {
+    width: 30px;
+    filter: brightness(0.7)
+}
+
+.next img {
+    width: 25px;
+    filter: brightness(0.7)
+}
+
+.content .artcanvas {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 11px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.artcanvas .moreInfo{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: brightness(0.5);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+.moreInfo:hover{
+    opacity: 1;
+}
+.moreInfo img{
+    height: 40px;
+}
+.rightbar {
+    position: relative;
+    width: 50%;
+    border-radius: 11px;
+    overflow: hidden;
+}
+.content .info .title{
+    font-size: 1.1em;
+    font-weight: 400;
+    color: #e1e1e1;
+}
+.content .info .desc{
+    font-size: 1em;
+    font-weight: 400;
+    color: #808080;
+}
+.navbar .desc{
+    font-size: 1.3em;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: #e1e1e1;
+}
+.navbar .cancelBtn{
+    background: #2e2e2e;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.cancelBtn:active{
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+.cancelBtn img{
+    width: 20px;
+}
+
+.rightbar .canvas {
+    height: 100%;
+    width: 100%;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.main-content .controller{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.controller .control{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e2e2e;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.control:active{
+    transform: scale(0.8);
+}
+.controller .ci{
+    width: 18px;
+}
+.controller .cb{
+    filter: brightness(0.5);
+}
+.controller .chb{
+    filter: brightness(1);
+}
+.rightbar .artist-card{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #1e1e1e;
+    padding: 15px;
+    overflow-y: auto;
+    transition: 0.4s ease;
+}
+.artist-card::-webkit-scrollbar{
+    display: none;
+}
+.card-hide{
+    left: 100%;
+}
+.card-unhide{
+    left: 0;
+}
+.artist-card .artist-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.artist-content .canvas{
+    width: 85%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 11px;
+}
+.artist-content .artistBtns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.artistBtns .artBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #2e2e2e;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.artBtn:active{
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+.artBtn:nth-child(2){
+    background-color: #0088ff;
+}
+.artBtn:nth-child(3){
+    background-color: #ff0050;
+}
+.artBtn:nth-child(1) img{
+    width: 11px;
+}
+.artBtn:nth-child(3) img{
+    width: 21px;
+}
+.artBtn img{
+    width: 20px;
+}
+.artist-card .artInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.artInfo .title{
+    font-size: 1.5em;
+    color: #e1e1e1;
+    font-weight: 400;
+}
+.artInfo .flw{
+    border: 2px solid #2e2e2e;
+    color: #e1e1e1;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 5px 15px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+.flw:active{
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+.about-wrapper::-webkit-scrollbar{
+    display: none;
+}
+.artist-card .about{
+    margin-top: 15px;
+    color: #808080;
+}
+
+.rightbar .musicArea{
+    position: absolute;
+    top: 0;
+    background: #1e1e1e;
+    width: 100%;
+    height: 100%;
+    transition: 0.4s ease;
+}
+.cardhide{
+    right: -400px;
+}
+.cardunhide{
+    right: 0;
+}
+.musicArea .musicNavbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 72px;
+    padding: 5px 20px;
+    border-bottom: 1.5px solid #2e2e2e;
+    height: 80px;
+}
+.musicArea .backBtn{
+    width: 35px;
+    height: 35px;
+    background: #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.musicNavbar .info{
+    text-align: center;
+}
+.info .CurrentPlay{
+    font-size: 1.3vw;
+    color: #808080;
+    transition:0.4s ease;
+}
+.info .title{
+    font-size: 1.3vw;
+    color: #00ff80;
+    transition:0.4s ease;
+}
+.musicContainer{
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+.musicContainer::-webkit-scrollbar{
+    display: none;
+}
+.musicContainer .card-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.card-wrapper .card{
+    position: relative;
+    width: 18vw;
+    height: 18vw;
+    border-radius: 15px;
+    transition: 0.4s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+.card .cardTag{
+    position: absolute;
+    bottom: 10px;
+    transition: 0.4s ease;
+    background: #1e1e1e;
+    font-size: 1.2vw;
+    padding: 0.2vw 1vw;
+    border-radius: 40px;
+    left: 10px;
+    color: #e1e1e1;
+    font-weight: 400;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1.5px solid  rgba(255, 255, 255, 0.2);
+}
+.cardTag.active{
+    color: #00ff80;
+}
+.card .playBtn{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 0.4s ease;
+}
+.playBtn img{
+    width: 50px;
+}
+.card:hover .playBtn{
+    opacity: 0.8;
+    transform: scale(1);
+}
+.card:hover .fitter{
+    filter: brightness(0.8);
+}
+.card:hover .resize{
+    transform: scale(1.2);
+}
+.card:active .playBtn{
+    transform: scale(0.90);
+}
+.resize{
+    transition: 0.4s ease;
+}
+.stylesContainer{
+    background: #000;
+    width: 100%;
+    border-radius: 20px;
+    padding: 15px;
+}
+.stylesContainer .navbar{
+    margin-bottom: 10px;
+}
+.stylesContainer .title{
+    font-size: 1.5em;
+    color: #808080;
+}
+.styles-wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+.styles-wrapper .style{
+    background: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.style:active{
+    transform: scale(0.95);
+    filter: brightness(0.8);
+}
+.styles-wrapper .styletxt{
+    font-size: 1.1em;
+    color: #e1e1e1;
+}
+.styles-wrapper .active{
+    width: 25px;
+    height: 25px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active.toggle::before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #00ff80;
+    border-radius: inherit;
+}
